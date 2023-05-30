@@ -1,0 +1,14 @@
+{
+    "name": "mothership-mt",
+    "version": "0.0.1",
+    "website": "daedeross.github.io",
+    "gitUrl": "github.com/Daedeross/mothership-mt",
+    "authors": [ "Bryan C. Jones" ],
+    "license": "MIT",
+    "namespace": "daedeross.mothership",
+    "description": "My library for assisting Mothership Sci-fi Horrer RPG games in MapTool",
+    "shortDescription": "Mothership RPG for MapTool",
+    "allowsUriAccess": true,
+    "readMeFile": "readme.md",
+    "licenseFile": "license.txt"
+  }
