@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 
 import PcHeader from './pc-header';
 import PersonalDetails from '../shared/personal-details';
+import PcStats from './pc-stats';
 
 function PcSheet({ character }) {
     return (
@@ -15,7 +16,7 @@ function PcSheet({ character }) {
             </Row>
             <Row className="mt-1" >
                 <Col><PersonalDetails character={character} /></Col>
-                <Col>Stats</Col>
+                <Col><PcStats character={character} /></Col>
             </Row>
         </Container>
     );

@@ -69,3 +69,28 @@ $border_thickness: 2px;
 .no-resize {
     resize: none;
 }
+
+div.stat {
+    @extend .rounded-circle;
+    @extend .border;
+    @extend .border-dark;
+    @extend .border-4;
+    @extend .text-center;
+    @extend .align-middle;
+    @extend .d-flex;
+    @extend .align-items-center;
+    @extend .justify-content-center;
+
+    aspect-ratio: 1;
+    font-size: 56px;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+span.stat {
+    margin-top: 10px;
+}
+
+.stats {
+    
+}
