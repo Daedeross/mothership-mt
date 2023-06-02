@@ -1,0 +1,65 @@
+{
+    "kind" : "PC",
+    "age": 21,
+    "armors": [
+        {
+            "id": 1460880679,
+            "name": "Scrubs",
+            "cost": 0,
+            "ap": 1,
+            "attributes": []
+        }
+    ],
+    "body": 27,
+    "class": "Scientist",
+    "combat": 45,
+    "credits": 290,
+    "currentarmor": 1460880679,
+    "currenthealth": 19,
+    "currentstress": 2,
+    "currentweapon": 1747236062,
+    "currentwounds": 0,
+    "description": "",
+    "equipment": [],
+    "expertskills": [
+        "Mysticism"
+    ],
+    "fear": 26,
+    "highscore": 0,
+    "intellect": 46,
+    "masterskills": [
+        "Xenoesotericism"
+    ],
+    "maxhealth": 19,
+    "maxwounds": 2,
+    "minimumstress": 2,
+    "name": "Chauncy Fuentes",
+    "notes": "",
+    "patch": "\"Don't run, you'll only die tired\" Backpatch",
+    "player": "Pat Doe",
+    "pronouns": "they/them",
+    "sanity": 51,
+    "speed": 36,
+    "strength": 36,
+    "trainedskills": [
+        "Archaeology",
+        "Rimwise"
+    ],
+    "traumaresponse": "Whenever you fail a sanity save, all nearby friendly players gain 1 stress.",
+    "trinket": "Trucker Cap, Mesh, Grey Alien Logo",
+    "weapons": [
+        {
+            "id": 1460880679,
+            "name": "Scalpel",
+            "cost": 50,
+            "range": "Adjacent",
+            "damage": "1d5",
+            "wounds": "0",
+            "shots": 0,
+            "remainingammo": 0,
+            "wound": "bleeding",
+            "woundadvantage": true,
+            "special": ""
+        }
+    ]
+}

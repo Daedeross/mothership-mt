@@ -3,13 +3,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    index: './src/index.js',
-    print: './src/print.js',
+    index: './src/index.js'
   },
-  mode: 'production',
+  mode: 'development',
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Output Management',
+      title: 'Character Sheet',
+      template: './src/index.html',
+      filename: './index.html'
     }),
   ],
   output: {
@@ -20,8 +21,28 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        test: /\.(sass|less|css|scss)$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: () => [
+                  require('autoprefixer')
+                ]
+              }
+            }
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,

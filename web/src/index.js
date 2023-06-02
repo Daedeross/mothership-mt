@@ -1,18 +1,11 @@
-import _ from 'lodash';
-import printMe from './print.js';
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import CharacterSheet from './components/character-sheet';
+import testCharacter from '../test/test-character.json';
 
-function component() {
-    const element = document.createElement('div');
-    const btn = document.createElement('button');
+// Importing the Bootstrap CSS
+import './scss/styles.scss';
 
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-    btn.innerHTML = 'Click me and check the console!';
-    btn.onclick = printMe;
-
-    element.appendChild(btn);
-
-    return element;
-}
-
- document.body.appendChild(component());
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<CharacterSheet character={testCharacter}  />);

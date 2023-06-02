@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'Secular One';
+    src: url('../resources/LeagueSpartan-Bold.ttf') format('truetype');
+    // font-weight: 400;
+    // font-style: normal;
+}
+$font-family-sans-serif: 'Secular One';
+
+// Import all of Bootstrap's CSS
+@import "~bootstrap/scss/bootstrap";
+
+$corner_lg: 8px;
+$corner_md: 5px;
+$corner_sm: 3px;
+$border_thickness: 2px;
+
+.row-2 {
+    height: 50%;
+}
+
+.row-3 {
+    height: 33%;
+}
+
+.row-4 {
+    height: 25%;
+}
+
+.header-box {
+    border-radius: $corner_lg;
+    border-width: $border_thickness;
+    border-style: solid;
+    border-color: black;
+    margin-top: 8px;
+}
+
+.personal-details-box {
+    border-radius: $corner_lg;
+    background-color: black;
+    color: white;
+}
+
+.game-logo {
+    max-height: 64px;
+    margin: 8px;
+}
+
+.header-top {
+    margin-top: 6px;
+    margin-bottom: -6px;
+}
+
+.header-bottom {
+    margin-top: -12px;
+}
+
+.input-highscore {
+    width: 4em;
+}
+
+.col-highscore {
+    padding-right: 0;
+}
+
+.col-player {
+    padding-left: 0;
+}
+
+.no-resize {
+    resize: none;
+}

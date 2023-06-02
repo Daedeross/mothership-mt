@@ -1,6 +1,9 @@
 # MapTool addon package
 *.mtlib
 
+# built web files
+library/public/web
+
 # Logs
 logs
 *.log
