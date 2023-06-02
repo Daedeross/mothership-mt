@@ -1,11 +1,6 @@
 import { useState } from 'react';
 import { defaultTo } from 'lodash-es';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
+import { Col, Container, Image, InputGroup, Form, Row } from 'react-bootstrap';
 
 import icon_dark from '../../resources/logo-dark.svg';
 

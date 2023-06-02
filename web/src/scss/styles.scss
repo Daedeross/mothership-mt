@@ -72,7 +72,12 @@ $border_thickness: 2px;
     resize: none;
 }
 
-div.stat {
+input.stat::-webkit-outer-spin-button,
+input.stat::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input.stat {
     @extend .rounded-circle;
     @extend .border;
     @extend .border-dark;
@@ -88,10 +93,7 @@ div.stat {
     max-width: 100px;
     max-height: 100px;
     background-color: white;
-}
-
-span.stat {
-    margin-top: 10px;
+    padding-top: 18px;
 }
 
 .condition-split {
@@ -104,9 +106,21 @@ span.stat {
 
 .condition-text {
     @extend .text-end;
-    margin-top: 3px;
+    align-self: center;
 }
 
 .condition-label {
     font-size: 8pt;
+}
+
+input.condition-entry::-webkit-outer-spin-button,
+input.condition-entry::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.condition-entry {
+    border: none;
+    padding: 6px;
+    background: none;
+    text-align: right;
 }

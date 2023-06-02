@@ -1,21 +1,23 @@
 import { Fragment } from 'react';
-import Col from 'react-bootstrap/Col';
+import { Col } from 'react-bootstrap';
+
 import ConditionDisplay from './condtion-display';
+import TraumaResponse from './trauma-response';
 
 function Conditions({character}) {
     return (
         <Fragment>
-            <Col xs={3}>
-                <ConditionDisplay name={"HEALTH"} current={character.currenthealth} maximum={character.maxhealth} />
+            <Col xs={2}>
+                <ConditionDisplay name={"HEALTH"} current={character.currenthealth} limit={character.maxhealth} />
             </Col>
-            <Col xs={3}>
-                <ConditionDisplay name={"WOUNDS"} current={character.currentwounds} maximum={character.maxwounds} />
+            <Col xs={2}>
+                <ConditionDisplay name={"WOUNDS"} current={character.currentwounds} limit={character.maxwounds} />
             </Col>
-            <Col xs={3}>
-                <ConditionDisplay name={"STRESS"} current={character.currentstress} maximum={character.minimumstress} reversed />
+            <Col xs={2}>
+                <ConditionDisplay name={"STRESS"} current={character.currentstress} limit={character.minimumstress} reversed />
             </Col>
-            <Col xs={3}>
-                <span>TODO: Trauma Response</span>
+            <Col xs={6} className="position-relative" style={{marginTop:-12}}>
+                <TraumaResponse header={character.class} text={character.traumaresponse} />
             </Col>
         </Fragment>
     );
