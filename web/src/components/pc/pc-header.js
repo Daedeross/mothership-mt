@@ -37,16 +37,21 @@ function PcHeader({character}) {
                 <Col>
                     <Container className="h-100">
                         <Row className="align-items-center row-2" style={{marginTop:1}}>
-                            <Form.Control type="text" size="lg" value={name} onChange={e => setName(e.target.value)} />
-                            </Row>
+                            <Col xs={8} style={{paddingLeft:0}} >
+                                <Form.Control type="text" size="lg" value={name} onChange={e => setName(e.target.value)} />
+                            </Col>
+                            <Col xs={4}>
+                                <h5 style={{marginTop:"0.5rem"}}>{character.class}</h5>
+                            </Col>
+                        </Row>
                         <Row className="align-items-center row-2">
-                            <Col className="col-player">
+                            <Col xs={8} className="col-player">
                                 <InputGroup>
                                     <InputGroup.Text>Player Name</InputGroup.Text>
                                     <Form.Control type="text" value={player} onChange={e => setPlayer(e.target.value)} />
                                 </InputGroup>
                             </Col>
-                            <Col xs="auto" className="col-highscore">
+                            <Col xs={4} className="col-highscore">
                                 <InputGroup>
                                     <InputGroup.Text>High Score</InputGroup.Text>
                                     <Form.Control type="number" style={{width: "4em"}} value={highScore} onChange={e => changeHighScore(e.target.value)} />

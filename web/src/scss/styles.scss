@@ -38,6 +38,8 @@ $border_thickness: 2px;
     border-radius: $corner_lg;
     background-color: black;
     color: white;
+    padding-top: 6px;
+    padding-bottom: 12px;
 }
 
 .game-logo {
@@ -85,8 +87,26 @@ div.stat {
     font-size: 56px;
     max-width: 100px;
     max-height: 100px;
+    background-color: white;
 }
 
 span.stat {
     margin-top: 10px;
+}
+
+.condition-split {
+    @extend .border-end;
+    @extend .border-dark;
+    // border-width: 2px;
+    transform: skewX(-20deg);
+    padding: 0px;
+}
+
+.condition-text {
+    @extend .text-end;
+    margin-top: 3px;
+}
+
+.condition-label {
+    font-size: 8pt;
 }

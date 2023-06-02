@@ -1,0 +1,16 @@
+name: name of class ["Marine", "Android", "Scientist", "Teamster"]
+bonuses: {
+    target: name of stat or save, eg. "body", "maxwounds"
+        if array, player has a choice, eg. ["sanity", "fear", "body" ] is the same as "to 1 SAVE",
+    value: amount of bonus/pentalty (if negative), eg. 10, -1
+}
+
+teamster: {
+    "name": "Teamster",
+    "bonuses" : [
+        {
+            "target" : ["strength"],
+            "value" : 
+        }
+    ]
+}
