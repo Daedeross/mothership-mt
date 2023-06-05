@@ -104,9 +104,16 @@ input.stat {
     padding: 0px;
 }
 
-.condition-text {
+.condition-limit {
     @extend .text-end;
     align-self: center;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 3px;
+    padding-bottom: 0px;
+    background: none;
+    text-align: right;
+    font-size: 14pt;
 }
 
 .condition-label {
@@ -120,7 +127,11 @@ input.condition-entry::-webkit-inner-spin-button {
 
 .condition-entry {
     border: none;
-    padding: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 3px;
+    padding-bottom: 0px;
     background: none;
     text-align: right;
+    font-size: 14pt;
 }

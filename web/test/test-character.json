@@ -54,7 +54,7 @@
             "cost": 50,
             "range": "Adjacent",
             "damage": "1d5",
-            "wounds": "0",
+            "wounds": 0,
             "shots": 0,
             "remainingammo": 0,
             "wound": "bleeding",

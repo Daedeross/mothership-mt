@@ -1,4 +1,3 @@
-import { max } from 'lodash-es';
 import { useState } from 'react';
 import { Col, Form } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
@@ -19,7 +18,7 @@ function ConditionDisplay({name, current, limit, reversed=false}) {
                                   value={value} onChange={e => setValue(Number(e.target.value))}></Form.Control>
                 </Col>
                 <Col xs={1} className="condition-split"></Col>
-                <Col xs={5} className="condition-text">{limit}</Col>
+                <Col xs={5} className="condition-limit">{limit}</Col>
             </Row>
             <Row className="condition-label">
                 <Col xs={5}>Current</Col>
