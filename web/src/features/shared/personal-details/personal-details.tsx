@@ -1,14 +1,12 @@
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
 import { Container, Form, Row } from 'react-bootstrap';
 
 import { selectors, setName, setNotes, setPronouns } from './personal-details-slice';
-import { useAppDispatch } from '../../../app/hooks';
+import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 
 function PersonalDetails() {
-    const name = useSelector(selectors.name)
-    const pronouns = useSelector(selectors.pronouns);
-    const notes = useSelector(selectors.notes);
+    const name = useAppSelector(selectors.name)
+    const pronouns = useAppSelector(selectors.pronouns);
+    const notes = useAppSelector(selectors.notes);
 
     const dispatch = useAppDispatch();
 

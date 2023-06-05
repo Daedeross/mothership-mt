@@ -1,16 +1,15 @@
-import { useSelector } from 'react-redux';
 import { Col, Container, Image, InputGroup, Form, Row } from 'react-bootstrap';
 
 import { selectors, setClass, setHighScore, setName, setPlayer } from './header-slice';
-import icon_dark from '../../../resources/logo-dark.svg';
-import { useAppDispatch } from '../../../app/hooks';
+import icon_dark from '../../../resources/logo-dark.png';
+import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 
 
 function PcHeader() {
-    const name = useSelector(selectors.name);
-    const player = useSelector(selectors.player);
-    const characterClass = useSelector(selectors.class);
-    const highScore = useSelector(selectors.highscore);
+    const name = useAppSelector(selectors.name);
+    const player = useAppSelector(selectors.player);
+    const characterClass = useAppSelector(selectors.class);
+    const highScore = useAppSelector(selectors.highscore);
 
     const dispatch = useAppDispatch();
 

@@ -52,9 +52,7 @@ export const statsSlice = createSlice({
     initialState,
     reducers: {
         setState: (state: StatsState, action: PayloadAction<StatsState>) => {
-            state = {
-                ...action.payload
-            };
+            return action.payload;
         },
         setValue: (state: StatsState, action: PayloadAction<SetStatPayload>) => {
             switch (action.payload.name) {

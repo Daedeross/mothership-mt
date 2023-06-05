@@ -4,7 +4,7 @@ import { Container, Col, Row } from 'react-bootstrap';
 import PcHeader from '../pc-header/pc-header';
 import PersonalDetails from '../../shared/personal-details/personal-details';
 import PcStats from '../pc-stats/pc-stats';
-//import Conditions from '../../shared/conditions';
+import Conditions from '../../shared/conditions/conditions';
 
 
 function PcSheet() : ReactElement {
@@ -20,7 +20,7 @@ function PcSheet() : ReactElement {
                 <Col><PcStats /></Col>
             </Row>
             <Row className="bg-light rounded-4 mt-1 mx-0" style={{marginBottom:12,paddingTop:12}} >
-                {/* <Conditions  /> */}
+                <Conditions  />
             </Row>
         </Container>
     );

@@ -12,7 +12,7 @@ if (Test-Path $zipFile) {
 Remove-Item .\library\public\web -Recurse -Force;
 
 Set-Location web;
-npm run build;
+npm run pack;
 Set-Location ..
 
 Copy-Item -Path ".\web\dist" -Destination ".\library\public\web" -Recurse

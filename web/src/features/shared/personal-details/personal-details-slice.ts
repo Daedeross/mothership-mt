@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../../app/store';
 import { CharacterDto } from '../../../dto/character.model';
+import { setName as setName2 } from '../../pc/pc-header/header-slice';
 
 export interface PersonalDetailsState {
     name: string;
@@ -19,9 +20,7 @@ export const personalDetailsSlice = createSlice({
     initialState,
     reducers: {
         setState: (state: PersonalDetailsState, action: PayloadAction<PersonalDetailsState>) => {
-            state = {
-                ...action.payload
-            };
+            return action.payload;
         },
         setName: (state: PersonalDetailsState, action: PayloadAction<string>) => {
             state.name = action.payload;
@@ -32,6 +31,13 @@ export const personalDetailsSlice = createSlice({
         setNotes: (state: PersonalDetailsState, action: PayloadAction<string>) => {
             state.notes = action.payload;
         }
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(setName2, (state, action) => {
+                state.name = action.payload;
+            })
+            .addDefaultCase((state, action) => {})
     }
 });
 

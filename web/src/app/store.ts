@@ -4,6 +4,7 @@ import statsReducer, { extractStats } from '../features/shared/stat/stats-slice'
 import headerReducer, { extractHeader } from '../features/pc/pc-header/header-slice';
 import detailsReducer, { extractDetails } from '../features/shared/personal-details/personal-details-slice';
 import kindReducer, { stringToCharacterType } from './kind-slice';
+import conditionsReducer, { extractConditions } from '../features/shared/conditions/conditions-slices';
 import { CharacterDto } from '../dto/character.model';
 
 
@@ -13,6 +14,7 @@ export const extractState = (dto: CharacterDto): RootState => {
         header: extractHeader(dto),
         details: extractDetails(dto),
         stats: extractStats(dto),
+        conditions: extractConditions(dto),
     };
 };
 
@@ -21,7 +23,8 @@ export const store = configureStore({
         kind: kindReducer,
         header: headerReducer,
         stats: statsReducer,
-        details: detailsReducer
+        details: detailsReducer,
+        conditions: conditionsReducer,
     }
 });
 

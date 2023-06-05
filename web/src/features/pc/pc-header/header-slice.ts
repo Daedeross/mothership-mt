@@ -1,7 +1,8 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createAction, createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { RootState } from '../../../app/store';
 import { CharacterClass, CharacterDto } from '../../../dto/character.model';
+import { setName as setName2 } from '../../shared/personal-details/personal-details-slice';
 
 export interface HeaderState {
     name: string;
@@ -22,9 +23,7 @@ export const headerSlice = createSlice({
     initialState,
     reducers: {
         setState: (state: HeaderState, action: PayloadAction<HeaderState>) => {
-            state = {
-                ...action.payload
-            };
+            return action.payload;
         },
         setName: (state: HeaderState, action: PayloadAction<string>) => {
             state.name = action.payload;
@@ -38,6 +37,13 @@ export const headerSlice = createSlice({
         setHighScore: (state: HeaderState, action: PayloadAction<number>) => {
             state.highscore = action.payload;
         }
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(setName2, (state, action) => {
+                state.name = action.payload;
+            })
+            .addDefaultCase((state, action) => {})
     }
 });
 

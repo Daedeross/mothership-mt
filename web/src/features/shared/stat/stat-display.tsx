@@ -1,17 +1,16 @@
 import { toUpper } from 'lodash';
 import { Form, Stack } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
 
 import { StatName, makeSelector, setValue } from './stats-slice';
-import { useAppDispatch } from '../../../app/hooks';
+import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 
 interface Props {
     label?: string;
     name: StatName;
 }
 
-const StatDisplay: React.FC<Props> = ({ label, name: name }) => {
-    const value = useSelector(makeSelector(name));
+const StatDisplay: React.FC<Props> = ({ label, name }) => {
+    const value = useAppSelector(makeSelector(name));
     const dispatch = useAppDispatch();
     const displayName = label ?? toUpper(StatName[name]);
 
