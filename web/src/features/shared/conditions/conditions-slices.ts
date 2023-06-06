@@ -1,8 +1,7 @@
 import { combineReducers, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { get, inRange, isEmpty, isNil, isNumber } from 'lodash';
+import { defaultTo, get, inRange, isNumber, pull, pullAt } from 'lodash';
 import { RootState } from '../../../app/store';
 import { CharacterDto } from '../../../dto/character.model';
-import { useAppDispatch } from '../../../app/hooks';
 
 export interface KeyedPayload<T> {
     key: string
@@ -57,23 +56,63 @@ const conditionValueSliceFactory = (key: string, initialState: ConditionValueSta
         }
     });
 
+export interface MiscConditionsState {
+    traumaresponse: string;
+    activeconditions: Array<string>;
+}
+
 export interface ConditionsState {
     health: ConditionValueState;
     wounds: ConditionValueState;
     stress: ConditionValueState;
+    misc: MiscConditionsState;
 }
 
 const initialState: ConditionsState = {
     health: { ...initialValueState },
     wounds: { ...initialValueState },
-    stress: { current: 2, min: 2, max: Number.MAX_SAFE_INTEGER }
+    stress: { current: 2, min: 2, max: Number.MAX_SAFE_INTEGER },
+    misc: {
+        traumaresponse: 'Nothing...',
+        activeconditions: []
+    }
 }
 
-const healthSlice = conditionValueSliceFactory('health', { ... initialValueState});
-const woundsSlice = conditionValueSliceFactory('wounds', { ... initialValueState});
-const stressSlice = conditionValueSliceFactory('stress', { current: 2, min: 2, max: 20 });
+const healthSlice = conditionValueSliceFactory('health', initialState.health);
+const woundsSlice = conditionValueSliceFactory('wounds', initialState.wounds);
+const stressSlice = conditionValueSliceFactory('stress', initialState.stress);
+
+const miscSlice = createSlice({
+    name: 'condition',
+    initialState: initialState.misc,
+    reducers: {
+        setMiscConditions: (state: MiscConditionsState, action: PayloadAction<MiscConditionsState>) => {
+            return action.payload;
+        },
+        setTraumaResponse: (state: MiscConditionsState, action: PayloadAction<string>) => {
+            state.traumaresponse = action.payload;
+        },
+        addCondition: (state: MiscConditionsState, action: PayloadAction<string>) => {
+            if (!state.activeconditions.includes(action.payload)) {
+                state.activeconditions.push(action.payload);
+            }
+        },
+        removeCondition: (state: MiscConditionsState, action: PayloadAction<string|number>) => {
+            if (typeof(action.payload) == 'string') {
+                pull(state.activeconditions, action.payload);
+            } else {
+                pullAt(state.activeconditions, action.payload);
+            }
+        },
+    }
+})
+
+export const selectTraumaResponse = (state: RootState) => state.conditions.misc.traumaresponse;
+export const selectActiveConditions = (state: RootState) => state.conditions.misc.activeconditions;
 
 export const { setState, setCurrent, setMax, setMin } = healthSlice.actions;
+
+export const { setMiscConditions, setTraumaResponse, addCondition, removeCondition } = miscSlice.actions;
 
 export const selectConditions = (state: RootState) => state.conditions;
 
@@ -120,14 +159,17 @@ export const extractConditions = (dto: CharacterDto): ConditionsState => {
             current: dto.currentstress,
             min: dto.minimumstress,
             max: Number.MAX_SAFE_INTEGER
+        },
+        misc: {
+            traumaresponse: dto.traumaresponse,
+            activeconditions: defaultTo(dto.activeconditions, [])
         }
     }
 }
-
-
 
 export default combineReducers({
     health: healthSlice.reducer,
     wounds: woundsSlice.reducer,
     stress: stressSlice.reducer,
+    misc: miscSlice.reducer
 })

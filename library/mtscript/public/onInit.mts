@@ -1,2 +1,3 @@
 [h: broadcast("add on in onInit")]
-[h: macro("showCharacterSheet.mts@lib:daedeross.mothership")]
+[h, macro("showCharacterSheet@this"): ""]
+[h: broadcast("after show")]

@@ -2,11 +2,16 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="onChangeSelection" type="macro" href="macro://daedeross.maptool/onChangeSelection/none/selected?"></link>
+    <link rel="onChangeSelection" type="macro" href="macro://onChangeSelection@lib:daedeross.mothership/none/selected?"></link>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League+Spartan:wght@800&display=swap"" crossorigin>
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
     <div id="root"></div>
+    <% for (var chunk in htmlWebpackPlugin.files.js) { %><script src="<%= htmlWebpackPlugin.files.js[chunk] %>?cachelib=false"></script><% } %>
+    <script>
+      function updateFrameState(x) { mothershipJS.pushUpdate(x) }
+    </script>
   </body>
 </html>

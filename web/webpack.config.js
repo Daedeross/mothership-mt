@@ -10,13 +10,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Character Sheet',
       template: './src/index.html',
-      filename: './index.html'
+      filename: './index.html',
+      inject: false
     }),
   ],
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+    library: 'mothershipJS',
+    libraryTarget: 'var'
   },
   module: {
     rules: [

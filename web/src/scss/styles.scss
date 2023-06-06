@@ -1,10 +1,18 @@
-@font-face {
-    font-family: 'Secular One';
-    src: url('../resources/LeagueSpartan-Bold.woff') format('woff');
-    // font-weight: 400;
-    // font-style: normal;
-}
-$font-family-sans-serif: 'Secular One';
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@800&display=swap');
+// @font-face {
+//     font-family: 'League Spartan';
+//     src: url('../resources/LeagueSpartan-Bold.ttf') format('truetype');
+// }
+$font-family-sans-serif: 'League Spartan', sans-serif;
+
+$font-weight-lighter:         800;
+$font-weight-light:           800;
+$font-weight-normal:          800;
+$font-weight-semibold:        800;
+$font-weight-bold:            800;
+$font-weight-bolder:          900;
+$font-weight-base:            800;
+$headings-font-weight:        $font-weight-bold;
 
 // Import all of Bootstrap's CSS
 @import "~bootstrap/scss/bootstrap";
@@ -87,13 +95,16 @@ input.stat {
     @extend .d-flex;
     @extend .align-items-center;
     @extend .justify-content-center;
+    @extend .fw-bold;
+    @extend .px-0;
+    @extend .mx-auto;
 
     aspect-ratio: 1;
-    font-size: 56px;
-    max-width: 100px;
-    max-height: 100px;
+    font-size: 46px;
+    max-width: 80px;
+    max-height: 80px;
     background-color: white;
-    padding-top: 18px;
+    padding-top: 12px;
 }
 
 .condition-split {
@@ -102,6 +113,7 @@ input.stat {
     // border-width: 2px;
     transform: skewX(-20deg);
     padding: 0px;
+    margin: 0px;
 }
 
 .condition-limit {

@@ -20,3 +20,5 @@ Copy-Item -Path ".\web\dist" -Destination ".\library\public\web" -Recurse
 Compress-Archive -Path $contents -DestinationPath $zipFile;
 
 Rename-Item $zipFile $libFile
+
+Copy-Item $libFile "D:\MapTool\Campaigns";

@@ -50,6 +50,8 @@ export const headerSlice = createSlice({
 export const { setState, setName, setPlayer, setClass, setHighScore } = headerSlice.actions;
 
 export const selectHeader = (state: RootState) => state.header;
+export const selectClass = (state: RootState) => state.header.class;
+
 export const extractHeader = (dto: CharacterDto): HeaderState => {
     return {
         name: dto.name,

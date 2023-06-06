@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { defaultTo } from 'lodash';
 import { RootState } from '../../../app/store';
 import { CharacterDto } from '../../../dto/character.model';
 
@@ -57,19 +56,28 @@ export const statsSlice = createSlice({
         setValue: (state: StatsState, action: PayloadAction<SetStatPayload>) => {
             switch (action.payload.name) {
                 case StatName.body:
-                    state.body = defaultTo(state.body, 0) + action.payload.value;
+                    state.body = action.payload.value;
+                    break;
                 case StatName.combat:
-                    state.combat = defaultTo(state.combat, 0) + action.payload.value;
+                    state.combat = action.payload.value;
+                    break;
                 case StatName.fear:
-                    state.fear = defaultTo(state.fear, 0) + action.payload.value;
+                    state.fear = action.payload.value;
+                    break;
                 case StatName.intellect:
-                    state.intellect = defaultTo(state.intellect, 0) + action.payload.value;
+                    state.intellect = action.payload.value;
+                    break;
                 case StatName.sanity:
-                    state.sanity = defaultTo(state.sanity, 0) + action.payload.value;
+                    state.sanity = action.payload.value;
+                    break;
                 case StatName.speed:
-                    state.speed = defaultTo(state.speed, 0) + action.payload.value;
+                    state.speed = action.payload.value;
+                    break;
                 case StatName.strength:
-                    state.strength = defaultTo(state.strength, 0) + action.payload.value;
+                    state.strength = action.payload.value;
+                    break;
+                default:
+                    return state;
             }
         }
     }

@@ -1,0 +1,7 @@
+[h, if(length(macro.args) != 32): return(0)]
+[h: id = macro.args]
+[h: kind = getPropertyType(id)]
+[h, if(!(kind == 'PC' || kind == 'NPC')): return(0)]
+[h, macro("getCharacterData@this"): id]
+[h: pushArgs = json.append("[]", macro.return)]
+[h: runJsFunction("Character Sheet", "frame", "updateFrameState", "null", pushArgs )]

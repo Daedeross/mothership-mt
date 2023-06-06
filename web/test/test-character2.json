@@ -1,5 +1,4 @@
 {
-    "kind" : "PC",
     "age": 21,
     "armors": [
         {
@@ -10,7 +9,9 @@
             "attributes": []
         }
     ],
+    "body": 27,
     "class": "Scientist",
+    "combat": 45,
     "credits": 290,
     "currentarmor": 1460880679,
     "currenthealth": 19,
@@ -22,7 +23,10 @@
     "expertskills": [
         "Mysticism"
     ],
+    "fear": 26,
     "highscore": 0,
+    "intellect": 46,
+    "kind": "PC",
     "masterskills": [
         "Xenoesotericism"
     ],
@@ -34,15 +38,10 @@
     "patch": "\"Don't run, you'll only die tired\" Backpatch",
     "player": "Pat Doe",
     "pronouns": "they/them",
-    "stats": {
-        "body": 27,
-        "combat": 45,
-        "fear": 26,
-        "intellect": 46,
-        "sanity": 21,
-        "speed": 36,
-        "strength": 36
-    },
+    "prounouns": "",
+    "sanity": 51,
+    "speed": 36,
+    "strength": 36,
     "trainedskills": [
         "Archaeology",
         "Rimwise"
@@ -56,7 +55,7 @@
             "cost": 50,
             "range": "Adjacent",
             "damage": "1d5",
-            "wounds": "0",
+            "wounds": 0,
             "shots": 0,
             "remainingammo": 0,
             "wound": "bleeding",

@@ -81,4 +81,5 @@ export interface CharacterDto {
     traumaresponse: string;
     trinket: string;
     weapons: Array<WeaponDto>;
+    activeconditions?: Array<string>;
 }

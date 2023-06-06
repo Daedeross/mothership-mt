@@ -2,7 +2,8 @@
   "properties": [
     {
       "filename": "public/onChangeSelection.mts",
-      "autoExecute": true
+      "autoExecute": true,
+      "location": "none"
     },
     {
       "filename": "public/showCharacterSheet.mts",

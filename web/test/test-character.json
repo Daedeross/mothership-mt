@@ -1,5 +1,4 @@
 {
-    "kind" : "PC",
     "age": 21,
     "armors": [
         {
@@ -27,6 +26,7 @@
     "fear": 26,
     "highscore": 0,
     "intellect": 46,
+    "kind": "PC",
     "masterskills": [
         "Xenoesotericism"
     ],
