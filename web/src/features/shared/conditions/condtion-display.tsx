@@ -1,7 +1,7 @@
 import { Col, Container, Form, Row } from 'react-bootstrap';
 import { defaultTo, toUpper } from 'lodash';
 
-import { selectCurrentFactory, selectMaxFactory, selectMinFactory, setCurrent } from './conditions-slices';
+import { selectCurrentFactory, selectMaxFactory, selectMinFactory, actions } from './conditions-slices';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 
 interface Props {
@@ -18,7 +18,7 @@ const ConditionDisplay: React.FC<Props> = ({ name, label = null, reversed = fals
     const dispatch = useAppDispatch();
 
     const handleChange = (value: string) => {
-        dispatch(setCurrent({ key: name, value: Number(value)}))
+        dispatch(actions.setCurrent({ key: name, value: Number(value)}))
     }
 
     return (
