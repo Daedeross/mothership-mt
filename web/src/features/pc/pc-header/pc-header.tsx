@@ -14,36 +14,27 @@ function PcHeader() {
     const dispatch = useAppDispatch();
 
     return (
-        <Container fluid className="header-box">
-            <Row className="row-eq-height">
+        <Container fluid className="header-box d-flex pt-2">
+            <Row className="row-eq-height flex-grow-1">
                 <Col xs="auto"><Image src={icon_dark} fluid className="game-logo" /></Col>
-                <Col xs="auto">
-                    <Container className="h-100">
-                        <Row className="align-text-bottom row-2 fs-2 header-top">MOTHERSHIP®</Row>
-                        <Row className="align-text-top row-2 fs-2 header-bottom">CHARACTER PROFILE</Row>
-                    </Container>
-                </Col>
-                <Col>
-                    <Container className="h-100">
-                        <Row className="align-items-center row-2" style={{marginTop:1}}>
-                            <Col xs={8} style={{paddingLeft:0}} >
-                                <Form.Control type="text" size="lg" value={name} onChange={e => dispatch(actions.setName(e.target.value))} />
-                            </Col>
-                            <Col xs={4}>
-                                <h5 style={{marginTop:"0.5rem"}}>{characterClass}</h5>
-                            </Col>
-                        </Row>
-                        <Row className="align-items-center row-2">
-                            <Col xs={8} className="col-player">
+                <Col className="flex-grow-1">
+                    <Container fluid className="h-100">
+                        <Row className="align-text-bottom row-2 fs-2 d-flex justify-content-between" >
+                            <Col>MOTHERSHIP®</Col>
+                            <Col className="col-player">
                                 <InputGroup>
                                     <InputGroup.Text>Player Name</InputGroup.Text>
                                     <Form.Control type="text" value={player} onChange={e => dispatch(actions.setPlayer(e.target.value))} />
                                 </InputGroup>
                             </Col>
-                            <Col xs={4} className="col-highscore">
+                        </Row>
+                        
+                        <Row className="align-text-top row-2 fs-2 d-flex justify-content-between">
+                            <Col xs={8} className="flex-grow-1">CHARACTER PROFILE</Col>
+                            <Col xs={4} style={{maxWidth:'6.25em'}}>
                                 <InputGroup>
                                     <InputGroup.Text>High Score</InputGroup.Text>
-                                    <Form.Control type="number" style={{width: "4em"}} value={highScore} onChange={e => dispatch(actions.setHighScore(Number(e.target.value)))} />
+                                    <Form.Control type="number" value={highScore} onChange={e => dispatch(actions.setHighScore(Number(e.target.value)))} />
                                 </InputGroup>
                             </Col>
                         </Row>
