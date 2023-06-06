@@ -110,9 +110,8 @@ const miscSlice = createSlice({
 export const selectTraumaResponse = (state: RootState) => state.conditions.misc.traumaresponse;
 export const selectActiveConditions = (state: RootState) => state.conditions.misc.activeconditions;
 
-export const { setState, setCurrent, setMax, setMin } = healthSlice.actions;
-
-export const { setMiscConditions, setTraumaResponse, addCondition, removeCondition } = miscSlice.actions;
+export const actions = { ...healthSlice.actions, ...miscSlice.actions }
+export const setValueCondition = actions.setState;
 
 export const selectConditions = (state: RootState) => state.conditions;
 

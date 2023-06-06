@@ -1,7 +1,7 @@
 import { toUpper } from 'lodash';
 import { Form, Stack } from 'react-bootstrap';
 
-import { StatName, makeSelector, setValue } from './stats-slice';
+import { StatName, makeSelector, actions } from './stats-slice';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 
 interface Props {
@@ -16,7 +16,7 @@ const StatDisplay: React.FC<Props> = ({ label, name }) => {
 
     return (
         <Stack gap={1} style={{maxWidth:100}}>
-            <Form.Control type="number" className="stat" value={value} onChange={e => dispatch(setValue({name, value:  Number(e.target.value)}))} />
+            <Form.Control type="number" className="stat" value={value} onChange={e => dispatch(actions.setValue({name, value:  Number(e.target.value)}))} />
             <div className="text-center align-items-center h5"><span>{displayName}</span></div>
         </Stack>
     );

@@ -1,7 +1,9 @@
 import { Button, Card, Col, OverlayTrigger, Popover } from 'react-bootstrap';
 import { useAppSelector } from '../../../app/hooks';
 import { selectTraumaResponse } from './conditions-slices';
-import { selectClass } from '../../pc/pc-header/header-slice';
+import { selectors as details } from '../personal-details/personal-details-slice';
+
+const selectClass = details.class;
 
 function TraumaResponse() {
     const header = useAppSelector(selectClass);

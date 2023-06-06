@@ -1,6 +1,6 @@
 import { Col, Container, Image, InputGroup, Form, Row } from 'react-bootstrap';
 
-import { selectors, setClass, setHighScore, setName, setPlayer } from './header-slice';
+import { actions, selectors } from '../../shared/personal-details/personal-details-slice';
 import icon_dark from '../../../resources/logo-dark.png';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 
@@ -27,7 +27,7 @@ function PcHeader() {
                     <Container className="h-100">
                         <Row className="align-items-center row-2" style={{marginTop:1}}>
                             <Col xs={8} style={{paddingLeft:0}} >
-                                <Form.Control type="text" size="lg" value={name} onChange={e => dispatch(setName(e.target.value))} />
+                                <Form.Control type="text" size="lg" value={name} onChange={e => dispatch(actions.setName(e.target.value))} />
                             </Col>
                             <Col xs={4}>
                                 <h5 style={{marginTop:"0.5rem"}}>{characterClass}</h5>
@@ -37,13 +37,13 @@ function PcHeader() {
                             <Col xs={8} className="col-player">
                                 <InputGroup>
                                     <InputGroup.Text>Player Name</InputGroup.Text>
-                                    <Form.Control type="text" value={player} onChange={e => dispatch(setPlayer(e.target.value))} />
+                                    <Form.Control type="text" value={player} onChange={e => dispatch(actions.setPlayer(e.target.value))} />
                                 </InputGroup>
                             </Col>
                             <Col xs={4} className="col-highscore">
                                 <InputGroup>
                                     <InputGroup.Text>High Score</InputGroup.Text>
-                                    <Form.Control type="number" style={{width: "4em"}} value={highScore} onChange={e => dispatch(setHighScore(Number(e.target.value)))} />
+                                    <Form.Control type="number" style={{width: "4em"}} value={highScore} onChange={e => dispatch(actions.setHighScore(Number(e.target.value)))} />
                                 </InputGroup>
                             </Col>
                         </Row>

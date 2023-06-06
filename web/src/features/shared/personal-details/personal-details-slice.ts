@@ -1,12 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../../app/store';
-import { CharacterDto } from '../../../dto/character.model';
-import { setName as setName2 } from '../../pc/pc-header/header-slice';
+import { CharacterClass, CharacterDto } from '../../../dto/character.model';
 
 export interface PersonalDetailsState {
     name: string;
     pronouns: string;
     notes: string;
+    player?: string;
+    highscore?: number;
+    class?: CharacterClass;
 }
 
 const initialState: PersonalDetailsState = {
@@ -30,32 +32,42 @@ export const personalDetailsSlice = createSlice({
         },
         setNotes: (state: PersonalDetailsState, action: PayloadAction<string>) => {
             state.notes = action.payload;
-        }
-    },
-    extraReducers: (builder) => {
-        builder
-            .addCase(setName2, (state, action) => {
-                state.name = action.payload;
-            })
-            .addDefaultCase((state, action) => {})
+        },
+        setPlayer: (state: PersonalDetailsState, action: PayloadAction<string>) => {
+            state.player = action.payload;
+        },
+        setClass: (state: PersonalDetailsState, action: PayloadAction<CharacterClass>) => {
+            state.class = action.payload;
+        },
+        setHighScore: (state: PersonalDetailsState, action: PayloadAction<number>) => {
+            state.highscore = action.payload;
+        },
     }
 });
 
-export const { setState, setName, setPronouns, setNotes } = personalDetailsSlice.actions;
+export const actions = { ...personalDetailsSlice.actions };
 
-export const selectDetails = (state: RootState) => state.details;
+export const setDetails = actions.setState;
+
 export const extractDetails = (dto: CharacterDto): PersonalDetailsState => {
     return {
         name: dto.name,
         pronouns: dto.pronouns,
-        notes: dto.notes
+        notes: dto.notes,
+        player: dto.player,
+        highscore: dto.highscore,
+        class: dto.class
     };
 };
 
+export const selectDetails = (state: RootState) => state.details;
 export const selectors = {
     name: (state: RootState) => selectDetails(state).name,
     pronouns: (state: RootState) => selectDetails(state).pronouns,
-    notes: (state: RootState) => selectDetails(state).notes
+    notes: (state: RootState) => selectDetails(state).notes,
+    player: (state: RootState) => selectDetails(state).player,
+    class: (state: RootState) => selectDetails(state).class,
+    highscore: (state: RootState) => selectDetails(state).highscore
 }
 
 export default personalDetailsSlice.reducer;

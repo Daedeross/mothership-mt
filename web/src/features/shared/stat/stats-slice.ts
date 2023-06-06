@@ -83,7 +83,8 @@ export const statsSlice = createSlice({
     }
 });
 
-export const { setState, setValue } = statsSlice.actions;
+export const actions = { ...statsSlice.actions };
+export const setStats = actions.setState;
 
 export const selectStats = (state: RootState) => state.stats;
 export const selectStat = (state: RootState, name: StatName) => {

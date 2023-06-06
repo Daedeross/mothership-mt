@@ -1,6 +1,6 @@
 import { Container, Form, Row } from 'react-bootstrap';
 
-import { selectors, setName, setNotes, setPronouns } from './personal-details-slice';
+import { selectors, actions } from './personal-details-slice';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 
 function PersonalDetails() {
@@ -16,13 +16,13 @@ function PersonalDetails() {
             <Row>
                 <Form className="mb-1">
                     <Form.Label htmlFor="inputName">Character Name</Form.Label>
-                    <Form.Control id="inputName" type="text" aria-describedby="inputName" value={name} onChange={e => dispatch(setName(e.target.value))}></Form.Control>
+                    <Form.Control id="inputName" type="text" aria-describedby="inputName" value={name} onChange={e => dispatch(actions.setName(e.target.value))}></Form.Control>
 
                     <Form.Label htmlFor="inputPronouns">Pronouns</Form.Label>
-                    <Form.Control id="inputPronouns" type="text" aria-describedby="inputPronouns" value={pronouns} onChange={e => dispatch(setPronouns(e.target.value))}></Form.Control>
+                    <Form.Control id="inputPronouns" type="text" aria-describedby="inputPronouns" value={pronouns} onChange={e => dispatch(actions.setPronouns(e.target.value))}></Form.Control>
 
                     <Form.Label htmlFor="inputNotes">Personal Notes</Form.Label>
-                    <Form.Control id="inpueNotes" className="no-resize" as="textarea" rows={4} value={notes} onChange={e => dispatch(setNotes(e.target.value))}></Form.Control>
+                    <Form.Control id="inpueNotes" className="no-resize" as="textarea" rows={4} value={notes} onChange={e => dispatch(actions.setNotes(e.target.value))}></Form.Control>
                 </Form>
             </Row>
         </Container>
