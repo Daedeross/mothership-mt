@@ -14,6 +14,32 @@ $font-weight-bolder:          900;
 $font-weight-base:            800;
 $headings-font-weight:        $font-weight-bold;
 
+// colors
+$blue:    #0d6efd;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #d63384;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #198754;
+$teal:    #20c997;
+$cyan:    #0dcaf0;
+
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+$light:         $gray-200;
+
 // Import all of Bootstrap's CSS
 @import "~bootstrap/scss/bootstrap";
 
@@ -85,7 +111,7 @@ input.stat::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
-input.stat {
+.stat-value {
     @extend .rounded-circle;
     @extend .border;
     @extend .border-dark;
@@ -101,10 +127,15 @@ input.stat {
 
     aspect-ratio: 1;
     font-size: 46px;
-    max-width: 80px;
-    max-height: 80px;
-    background-color: white;
+    width: 80px;
+    height: 80px;
     padding-top: 12px;
+}
+
+input.stat-value {
+    @extend .stat;
+
+    background-color: white;
 }
 
 .condition-split {
@@ -146,4 +177,8 @@ input.condition-entry::-webkit-inner-spin-button {
     background: none;
     text-align: right;
     font-size: 14pt;
+}
+
+.roll-group>button {
+    @extend .pt-2;
 }
