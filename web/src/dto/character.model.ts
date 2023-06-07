@@ -47,6 +47,7 @@ export interface WeaponDto  {
 }
 
 export interface CharacterDto {
+    id: string;
     kind: string;
     age: number;
     armors: Array<Armor>;

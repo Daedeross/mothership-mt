@@ -4,7 +4,7 @@ import { ReactElement } from 'react';
 
 import PcSheet from './pc/pc-sheet/pc-sheet';
 import EmptySheet from './empty-sheet';
-import { CharacterType, selectKind } from '../app/kind-slice';
+import { CharacterType, selectKind } from '../app/token-slice';
 
 
 function CharacterSheet(): ReactElement {

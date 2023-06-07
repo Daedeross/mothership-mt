@@ -8,12 +8,23 @@ export enum RollMode {
     Disadvantage
 }
 
+export enum DisplayType {
+    Self = "self",
+    Gm = "gm",
+    All = "all",
+    None = "none",
+    GmSelf = "gm-self",
+    List = "list"
+}
+
 export interface RollModeState {
     mode: RollMode;
+    display: DisplayType;
 }
 
 const initialState: RollModeState = {
-    mode: RollMode.None
+    mode: RollMode.None,
+    display: DisplayType.All
 }
 
 export const rollModeSlice = createSlice({
@@ -27,12 +38,16 @@ export const rollModeSlice = createSlice({
             state.mode = state.mode === RollMode.None
                 ? RollMode.Normal
                 : RollMode.None;
+        },
+        setDisplayType: (state: RollModeState, action: PayloadAction<DisplayType>) => {
+            state.display = action.payload;
         }
     }
 });
 
-export const { setRollMode, toggleRollMode } = rollModeSlice.actions;
+export const { setRollMode, toggleRollMode, setDisplayType } = rollModeSlice.actions;
 
-export const selectRollMode = (state: RootState) => state.rollmode.mode
+export const selectRollMode = (state: RootState) => state.rollmode.mode;
+export const selectDisplayType = (state: RootState) => state.rollmode.display;
 
 export default rollModeSlice.reducer;

@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import kindReducer from './kind-slice';
+import tokenReducer from './token-slice';
 import statsReducer from '../features/shared/stat/stats-slice';
 import detailsReducer from '../features/shared/personal-details/personal-details-slice';
 import conditionsReducer from '../features/shared/conditions/conditions-slices';
@@ -8,7 +8,7 @@ import rollModeReducer from '../features/shared/roll/roll-mode-slice';
 
 export const store = configureStore({
     reducer: {
-        kind: kindReducer,
+        token: tokenReducer,
         stats: statsReducer,
         details: detailsReducer,
         conditions: conditionsReducer,

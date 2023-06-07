@@ -2,7 +2,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 import { CharacterDto } from '../dto/character.model';
 import { store, RootState, AppDispatch } from './store';
-import { stringToCharacterType, setKind } from './kind-slice';
+import { stringToCharacterType, setKind, setId } from './token-slice';
 import { extractStats, setStats } from '../features/shared/stat/stats-slice';
 import { extractDetails, setDetails } from '../features/shared/personal-details/personal-details-slice';
 import { extractConditions, ConditionsState, actions as conditionsActions } from '../features/shared/conditions/conditions-slices';
@@ -23,6 +23,7 @@ export const testFoo = (x: string) => {
 }
 
 export const updateState = (dto: CharacterDto) => {
+    store.dispatch(setId(dto.id));
     store.dispatch(setKind(stringToCharacterType(dto.kind)));
     store.dispatch(setStats(extractStats(dto)));
     store.dispatch(setDetails(extractDetails(dto)));

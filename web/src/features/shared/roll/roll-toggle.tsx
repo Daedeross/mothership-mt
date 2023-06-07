@@ -31,9 +31,9 @@ export function RollToggle() {
         <SplitButton variant={getRollVariant(rollMode)} title={rollMode === RollMode.None ? 'Roll' : RollMode[rollMode]}
                      className="roll-group"
                      onClick={e => dispatch(toggleRollMode())} onSelect={(key, e) => onRollSelect(key)}>
-            <Dropdown.Item eventKey={nameOf(RollMode.Normal)}>Normal</Dropdown.Item>
-            <Dropdown.Item eventKey={nameOf(RollMode.Advantage)}>Advantage</Dropdown.Item>
-            <Dropdown.Item eventKey={nameOf(RollMode.Disadvantage)}>Disadvantage</Dropdown.Item>
+            <Dropdown.Item className="text-bg-info" eventKey={nameOf(RollMode.Normal)}>Normal</Dropdown.Item>
+            <Dropdown.Item className="text-bg-success" eventKey={nameOf(RollMode.Advantage)}>Advantage [+]</Dropdown.Item>
+            <Dropdown.Item className="text-bg-danger" eventKey={nameOf(RollMode.Disadvantage)}>Disadvantage [-]</Dropdown.Item>
         </SplitButton>
     )
 }

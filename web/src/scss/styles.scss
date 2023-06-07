@@ -182,3 +182,7 @@ input.condition-entry::-webkit-inner-spin-button {
 .roll-group>button {
     @extend .pt-2;
 }
+
+.roll-group>div {
+    @extend .bg-secondary;
+}

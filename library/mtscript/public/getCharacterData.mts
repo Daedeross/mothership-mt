@@ -2,6 +2,7 @@
 [h: names = getPropertyNames(',', id)]
 [h: macro.return = "{}"]
 [h, macro("getProperties@this"): json.set("{}", "id", id, "names", names)]
+[h: macro.return = json.set(macro.return, "id", id)]
 [h: macro.return = json.set(macro.return, "kind", getPropertyType(id))]
 [h: macro.return = json.set(macro.return, "name", getName(id))]
 [h: macro.return = json.set(macro.return, "notes", getNotes(id))]

@@ -1,1 +1,1 @@
-[h: broadcast("add on in onFirstInit")]
+[h: broadcast("add-on in onFirstInit", "gm")]
