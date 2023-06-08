@@ -186,3 +186,14 @@ input.condition-entry::-webkit-inner-spin-button {
 .roll-group>div {
     @extend .bg-secondary;
 }
+
+.skill-item {
+    @extend .rounded;
+    @extend .p-2;
+
+    background-color: white;
+}
+
+.skill-name {
+    @extend .me-2;
+}

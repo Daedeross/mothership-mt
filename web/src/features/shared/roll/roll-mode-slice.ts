@@ -1,6 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../../app/store';
 
+export interface SkillBonus {
+    name: string;
+    bonus: number;
+}
+
 export enum RollMode {
     None = 0,
     Normal,
@@ -20,11 +25,13 @@ export enum DisplayType {
 export interface RollModeState {
     mode: RollMode;
     display: DisplayType;
+    skill: SkillBonus | null;
 }
 
 const initialState: RollModeState = {
     mode: RollMode.None,
-    display: DisplayType.All
+    display: DisplayType.All,
+    skill: null
 }
 
 export const rollModeSlice = createSlice({
@@ -38,16 +45,21 @@ export const rollModeSlice = createSlice({
             state.mode = state.mode === RollMode.None
                 ? RollMode.Normal
                 : RollMode.None;
+            state.skill = null;
         },
         setDisplayType: (state: RollModeState, action: PayloadAction<DisplayType>) => {
             state.display = action.payload;
+        },
+        setRollSkill: (state: RollModeState, action: PayloadAction<SkillBonus | null>) => {
+            state.skill = action.payload;
         }
     }
 });
 
-export const { setRollMode, toggleRollMode, setDisplayType } = rollModeSlice.actions;
+export const { setRollMode, toggleRollMode, setDisplayType, setRollSkill } = rollModeSlice.actions;
 
 export const selectRollMode = (state: RootState) => state.rollmode.mode;
 export const selectDisplayType = (state: RootState) => state.rollmode.display;
+export const selectRollSkill = (state: RootState) => state.rollmode.skill;
 
 export default rollModeSlice.reducer;

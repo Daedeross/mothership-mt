@@ -1,10 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import tokenReducer from './token-slice';
+import linkerReducer from './linker-slice';
 import statsReducer from '../features/shared/stat/stats-slice';
 import detailsReducer from '../features/shared/personal-details/personal-details-slice';
 import conditionsReducer from '../features/shared/conditions/conditions-slices';
 import rollModeReducer from '../features/shared/roll/roll-mode-slice';
+import skillsReducer from '../features/pc/skills/skills-slice';
+import armorReducer from '../features/shared/armor/armor-slice';
 
 export const store = configureStore({
     reducer: {
@@ -13,6 +16,9 @@ export const store = configureStore({
         details: detailsReducer,
         conditions: conditionsReducer,
         rollmode: rollModeReducer,
+        skills: skillsReducer,
+        linker: linkerReducer,
+        armor: armorReducer,
     }
 });
 

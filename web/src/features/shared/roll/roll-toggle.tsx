@@ -3,7 +3,6 @@ import { Dropdown, SplitButton } from "react-bootstrap";
 
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { RollMode, selectRollMode, setRollMode, toggleRollMode } from "./roll-mode-slice";
-import { Button } from "react-bootstrap/lib/InputGroup";
 
 const nameOf = (mode: RollMode) => RollMode[mode];
 

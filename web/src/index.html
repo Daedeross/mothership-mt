@@ -9,6 +9,7 @@
   </head>
   <body>
     <div id="root"></div>
+    <a id="linker" class="visually-hidden"></a>
     <% for (var chunk in htmlWebpackPlugin.files.js) { %><script src="<%= htmlWebpackPlugin.files.js[chunk] %>?cachelib=false"></script><% } %>
     <script>
       function updateFrameState(x) { mothershipJS.pushUpdate(x) }

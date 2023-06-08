@@ -4,7 +4,7 @@ import { Col } from 'react-bootstrap';
 import ConditionDisplay from './condtion-display';
 import TraumaResponse from './trauma-response';
 
- function Conditions() {
+function Conditions() {
     return (
         <Fragment>
             <Col xs={2}>

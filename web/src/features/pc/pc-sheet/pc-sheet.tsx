@@ -5,7 +5,7 @@ import PcHeader from '../pc-header/pc-header';
 import PersonalDetails from '../../shared/personal-details/personal-details';
 import PcStats from '../pc-stats/pc-stats';
 import Conditions from '../../shared/conditions/conditions';
-
+import Skills from '../skills/skills';
 
 function PcSheet() : ReactElement {
     return (
@@ -21,6 +21,17 @@ function PcSheet() : ReactElement {
             </Row>
             <Row className="bg-light rounded-4 mt-1 mx-0" style={{marginBottom:12,paddingTop:12}} >
                 <Conditions  />
+            </Row>
+            <Row className="bg-light rounded-4 mt-1 mx-0" style={{marginBottom:12,paddingTop:12}} >
+                <Skills />
+            </Row>
+            <Row className='mt-1 mx-0'>
+                <Col className="bg-light rounded-4" style={{marginBottom:12, paddingTop:12}} >
+                    Armor
+                </Col>
+                <Col className="bg-light rounded-4" style={{marginBottom:12, paddingTop:12}} >
+                    Weapon
+                </Col>
             </Row>
         </Container>
     );
