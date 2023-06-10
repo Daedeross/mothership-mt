@@ -37,16 +37,16 @@
 	[h, if(useNew), code: {
 		[h: critical = critical2]
 		[h: success = success2]
-		[h: resultText = strformat("<span style='color:white;background-color:gray'>&nbsp;<strike>%{result1}</strike>&nbsp;<b>%{result2}</b>&nbsp;</span>")]
+		[h: resultText = strformat("<span style='color:white;background-color:gray'>&nbsp;<strike>%{die1}%{die2}</strike>&nbsp;<b>%{die3}%{die4}</b>&nbsp;</span>")]
 	}; {
 		[h: critical = critical1]
 		[h: success = success1]
-		[h: resultText = strformat("<span style='color:white;background-color:gray'>&nbsp;<b>%{result1}</b>&nbsp;<strike>%{result2}</strike>&nbsp;</span>")]
+		[h: resultText = strformat("<span style='color:white;background-color:gray'>&nbsp;<b>%{die1}%{die2}</b>&nbsp;<strike>%{die3}%{die4}</strike>&nbsp;</span>")]
 	}]
 };{
 	[h: critical = critical1]
 	[h: success = success1]
-	[h: resultText = strformat("<span style='color:white;background-color:gray'>&nbsp;<b>%{result1}</b> </span>")]
+	[h: resultText = strformat("<span style='color:white;background-color:gray'>&nbsp;<b>%{die1}%{die2}</b> </span>")]
 }]
 
 [h: critText = if(critical, "<b>critical</b> ", "")]

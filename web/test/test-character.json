@@ -4,6 +4,15 @@
     "armors": [
         {
             "id": 1460880679,
+            "name": "Advanced Battle Dress",
+            "cost": 1500,
+            "ap": 7,
+            "speedpenalty": true,
+            "o2supply": 1,
+            "attributes": ["short-range comms", "body cam", "headlamp", "HUD", "exoskeleton weave ([+] on Strength Checks)", "radiation shielding", "Ignores the first Wound you suffer"]
+        },
+        {
+            "id": 1560880679,
             "name": "Scrubs",
             "cost": 0,
             "ap": 1,
@@ -50,12 +59,12 @@
     "trinket": "Trucker Cap, Mesh, Grey Alien Logo",
     "weapons": [
         {
-            "id": 1460880679,
+            "id": 1747236062,
             "name": "Scalpel",
             "cost": 50,
             "range": "Adjacent",
             "damage": "1d5",
-            "wounds": 0,
+            "wounddamage": "",
             "shots": 0,
             "remainingammo": 0,
             "wound": "bleeding",

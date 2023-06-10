@@ -3,7 +3,7 @@ import { Container, Row } from 'react-bootstrap';
 
 import { useAppSelector } from '../../../app/hooks';
 import { SkillType, selectSkillsOfType } from './skills-slice';
-import SkillDisplay from './skills-display';
+import SkillDisplay from './skill-display';
 
 
 function Skills(): ReactElement {
@@ -12,7 +12,7 @@ function Skills(): ReactElement {
     const master = useAppSelector(selectSkillsOfType(SkillType.Master));
 
     const mapSkill = (bonus: number) => (name: string) => {
-        return <SkillDisplay name={name} bonus={bonus} />
+        return <SkillDisplay key={name} name={name} bonus={bonus} />
     }
 
     const skills = trained.map(mapSkill(10))

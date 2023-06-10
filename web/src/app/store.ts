@@ -8,6 +8,7 @@ import conditionsReducer from '../features/shared/conditions/conditions-slices';
 import rollModeReducer from '../features/shared/roll/roll-mode-slice';
 import skillsReducer from '../features/pc/skills/skills-slice';
 import armorReducer from '../features/shared/armor/armor-slice';
+import weaponReducer from '../features/shared/weapon/weapon-slice';
 
 export const store = configureStore({
     reducer: {
@@ -19,6 +20,7 @@ export const store = configureStore({
         skills: skillsReducer,
         linker: linkerReducer,
         armor: armorReducer,
+        weapon: weaponReducer,
     }
 });
 

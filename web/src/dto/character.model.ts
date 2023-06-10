@@ -1,3 +1,4 @@
+import { RollMode } from "../features/shared/roll/roll-mode-slice";
 
 export enum CharacterClass {
     Marine = "Marine",
@@ -22,6 +23,8 @@ export interface Armor {
     name: string;
     cost: number;
     ap: number;
+    o2supply?: number;
+    speedpenalty?: boolean;
     attributes: Array<string>
 }
 
@@ -32,18 +35,18 @@ export interface Equipment {
     description: string | null;
 }
 
-export interface WeaponDto  {
+export interface Weapon {
     id: number;
     name: string;
+    model?: string;
     cost: number;
     range: RangeBand;
     damage: string;
-    wounds: number;
+    wounddamage: string;
     shots: number;
-    remainingammo: 0;
+    remainingammo: number;
     wound: string;
-    woundadvantage: boolean;
-    special: string;
+    special: string | Array<string>;
 }
 
 export interface CharacterDto {
@@ -81,6 +84,6 @@ export interface CharacterDto {
     trainedskills: Array<string>;
     traumaresponse: string;
     trinket: string;
-    weapons: Array<WeaponDto>;
+    weapons: Array<Weapon>;
     activeconditions?: Array<string>;
 }

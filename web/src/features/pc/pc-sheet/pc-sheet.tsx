@@ -6,6 +6,8 @@ import PersonalDetails from '../../shared/personal-details/personal-details';
 import PcStats from '../pc-stats/pc-stats';
 import Conditions from '../../shared/conditions/conditions';
 import Skills from '../skills/skills';
+import Armors from '../../shared/armor/armors';
+import Weapons from '../../shared/weapon/weapons';
 
 function PcSheet() : ReactElement {
     return (
@@ -26,11 +28,11 @@ function PcSheet() : ReactElement {
                 <Skills />
             </Row>
             <Row className='mt-1 mx-0'>
-                <Col className="bg-light rounded-4" style={{marginBottom:12, paddingTop:12}} >
-                    Armor
+                <Col className="bg-light rounded-4 me-2" style={{marginBottom:12, paddingTop:12, paddingBottom:6}} >
+                    <Armors />
                 </Col>
-                <Col className="bg-light rounded-4" style={{marginBottom:12, paddingTop:12}} >
-                    Weapon
+                <Col className="bg-light rounded-4 ms-2" style={{marginBottom:12, paddingTop:12}} >
+                    <Weapons />
                 </Col>
             </Row>
         </Container>

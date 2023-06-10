@@ -1,0 +1,1 @@
+[r: macro.return = roll(1, 2147483647)]

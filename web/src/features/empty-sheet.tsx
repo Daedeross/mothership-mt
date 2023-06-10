@@ -8,7 +8,7 @@ function EmptySheet() {
         <Container fluid>
             <Row className="align-items-center vh-100">
                 <Col>
-                    <Alert variant="warning">Please select a token you own to display it's sheet.</Alert>
+                    <Alert variant="warning">Please select a token you own to display its sheet.</Alert>
                 </Col>
             </Row>
         </Container>

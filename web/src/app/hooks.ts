@@ -8,6 +8,7 @@ import { extractDetails, setDetails } from '../features/shared/personal-details/
 import { extractConditions, ConditionsState, actions as conditionsActions } from '../features/shared/conditions/conditions-slices';
 import { extractSkills, setSkills } from '../features/pc/skills/skills-slice';
 import { armorActions } from '../features/shared/armor/armor-slice';
+import { weaponActions } from '../features/shared/weapon/weapon-slice';
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch = () => useDispatch<AppDispatch>();
@@ -33,4 +34,6 @@ export const updateState = (dto: CharacterDto) => {
     store.dispatch(setSkills(extractSkills(dto)));
     store.dispatch(armorActions.setArmors(dto.armors));
     store.dispatch(armorActions.setCurrent(dto.currentarmor > 0 ? dto.currentarmor : null))
+    store.dispatch(weaponActions.setWeapons(dto.weapons));
+    store.dispatch(weaponActions.setCurrent(dto.currentweapon > 0 ? dto.currentweapon : null))
 }
