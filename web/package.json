@@ -10,6 +10,7 @@
     "bootstrap": "^5.2.3",
     "react-bootstrap": "^2.7.4",
     "react-redux": "^8.0.7",
+    "react-timer-hook": "^3.0.6",
     "ts-loader": "^9.4.3",
     "typescript": "^5.1.3"
   },
