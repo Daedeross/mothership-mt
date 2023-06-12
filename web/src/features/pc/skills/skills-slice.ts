@@ -62,6 +62,12 @@ export const extractSkills = (dto: CharacterDto): SkillsState => {
     }
 }
 
+export const selectSkillsDto = (state: RootState) => ({
+    trainedskills: state.skills.trained,
+    expertskills : state.skills.expert,
+    masterskills : state.skills.master
+})
+
 export const selectSkillsOfType = (kind: SkillType) => (state: RootState) => selectKind(state.skills, kind);
 
 export default skillsSlice.reducer;

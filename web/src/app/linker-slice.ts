@@ -10,7 +10,7 @@ const initialState: LinkerState = {
     uri: ''
 }
 
-const linkerSlice = createSlice({
+export const linkerSlice = createSlice({
     name: 'linker',
     initialState,
     reducers: {

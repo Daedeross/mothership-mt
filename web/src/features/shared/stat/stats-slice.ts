@@ -112,13 +112,23 @@ export const extractStats = (dto: CharacterDto) => {
     return {
         strength: dto.strength,
         speed: dto.speed,
-        intellect: dto.intellect,
+        intellect: dto.intellect || 0,
         combat: dto.combat,
         sanity: dto.sanity,
         fear: dto.fear,
         body: dto.body,
     }
 }
+
+export const selectStatsDto = (state: RootState) => ({
+    strength: state.stats.strength,
+    speed: state.stats.speed,
+    intellect: state.stats.intellect,
+    combat: state.stats.combat,
+    sanity: state.stats.sanity,
+    fear: state.stats.fear,
+    body: state.stats.body,
+})
 
 export function makeSelector(n: StatName) {
     return (state: RootState) => selectStat(state, n);

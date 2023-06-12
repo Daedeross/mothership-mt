@@ -97,8 +97,8 @@ const miscSlice = createSlice({
                 state.activeconditions.push(action.payload);
             }
         },
-        removeCondition: (state: MiscConditionsState, action: PayloadAction<string|number>) => {
-            if (typeof(action.payload) == 'string') {
+        removeCondition: (state: MiscConditionsState, action: PayloadAction<string | number>) => {
+            if (typeof (action.payload) == 'string') {
                 pull(state.activeconditions, action.payload);
             } else {
                 pullAt(state.activeconditions, action.payload);
@@ -149,12 +149,12 @@ export const extractConditions = (dto: CharacterDto): ConditionsState => {
             max: dto.maxhealth,
             min: 0,
         },
-        wounds : {
+        wounds: {
             current: dto.currentwounds,
             max: dto.maxwounds,
             min: 0
         },
-        stress : {
+        stress: {
             current: dto.currentstress,
             min: dto.minimumstress,
             max: Number.MAX_SAFE_INTEGER
@@ -166,9 +166,24 @@ export const extractConditions = (dto: CharacterDto): ConditionsState => {
     }
 }
 
-export default combineReducers({
+export const selectConditionsDto = (state: RootState) => {;
+    return {
+        currenthealth: state.conditions.health.current,
+        maxhealth: state.conditions.health.max,
+        currentwounds: state.conditions.wounds.current,
+        maxwounds: state.conditions.wounds.current,
+        currentstress: state.conditions.stress.current,
+        minimumstress: state.conditions.stress.min,
+        traumaresponse: state.conditions.misc.traumaresponse,
+        activeconditions: state.conditions.misc.activeconditions
+    }
+}
+
+const conditionsReducer = combineReducers({
     health: healthSlice.reducer,
     wounds: woundsSlice.reducer,
     stress: stressSlice.reducer,
     misc: miscSlice.reducer
-})
+});
+
+export default conditionsReducer;

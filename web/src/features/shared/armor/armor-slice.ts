@@ -1,8 +1,8 @@
 import { createEntityAdapter, createSlice, EntityState, PayloadAction } from '@reduxjs/toolkit';
 
 import { RootState } from '../../../app/store';
-import { Armor } from '../../../dto/character.model';
-import { indexOf, isNil } from 'lodash';
+import { Armor, CharacterDto } from '../../../dto/character.model';
+import { defaultTo, indexOf, isNil } from 'lodash';
 
 export interface ArmorsState {
     current: number | null;
@@ -77,5 +77,10 @@ export const armorSelectors = {
         return adapter_selectors.selectById(state, state.armor.displayed)
     },
 }
+
+export const selectArmorsDto = (state: RootState) => ({
+    armors: adapter_selectors.selectAll(state),
+    currentarmor: defaultTo(armorSelectors.selectCurrentId(state), 0)
+});
 
 export default armorSlice.reducer;

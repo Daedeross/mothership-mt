@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+import listenerMiddleware from './listener';
 import tokenReducer from './token-slice';
 import linkerReducer from './linker-slice';
 import statsReducer from '../features/shared/stat/stats-slice';
@@ -21,7 +22,9 @@ export const store = configureStore({
         linker: linkerReducer,
         armor: armorReducer,
         weapon: weaponReducer,
-    }
+    },
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware().prepend(listenerMiddleware.middleware),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

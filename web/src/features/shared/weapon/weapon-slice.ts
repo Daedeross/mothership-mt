@@ -2,7 +2,7 @@ import { createEntityAdapter, createSlice, EntityState, PayloadAction } from '@r
 
 import { RootState } from '../../../app/store';
 import { Weapon } from '../../../dto/character.model';
-import { indexOf, isNil } from 'lodash';
+import { defaultTo, indexOf, isNil } from 'lodash';
 
 export interface WeaponsState {
     current: number | null;
@@ -77,5 +77,10 @@ export const weaponSelectors = {
         return adapter_selectors.selectById(state, state.weapon.displayed)
     },
 }
+
+export const selectWeaponsDto = (state: RootState) => ({
+    weapons: adapter_selectors.selectAll(state),
+    currentweapon: defaultTo(weaponSelectors.selectCurrentId(state), 0)
+});
 
 export default weaponSlice.reducer;

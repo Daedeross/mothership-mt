@@ -19,22 +19,26 @@ export function stringToCharacterType(value: string) {
 export interface TokenState {
     id: string;
     kind: CharacterType;
+    changing: boolean;
 }
 
 export const tokenSlice = createSlice({
     name: 'token',
-    initialState: { id: '', kind: CharacterType.Other },
+    initialState: { id: '', kind: CharacterType.Other, changing: false },
     reducers: {
         setKind: (state: TokenState, action: PayloadAction<CharacterType>) => {
             state.kind = action.payload;
         },
         setId: (state: TokenState, action: PayloadAction<string>) => {
             state.id = action.payload;
+        },
+        setChanging: (state: TokenState, action: PayloadAction<boolean>) => {
+            state.changing = action.payload;
         }
     }
 });
 
-export const { setId, setKind } = tokenSlice.actions;
+export const { setId, setKind, setChanging } = tokenSlice.actions;
 
 export const selectKind = (state: RootState): CharacterType => state.token.kind;
 export const selectId = (state: RootState): string => state.token.id;
