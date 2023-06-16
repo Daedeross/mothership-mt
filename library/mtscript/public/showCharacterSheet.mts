@@ -1,1 +1,1 @@
-[h: html.frame5("Character Sheet", "lib://daedeross.mothership/web/index.html")]
+[h: html.frame5("Character Sheet", "lib://daedeross.mothership/sheet/index.html")]

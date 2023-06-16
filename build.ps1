@@ -9,13 +9,13 @@ if (Test-Path $libFile) {
 if (Test-Path $zipFile) {
     Remove-Item $zipFile
 }
-Remove-Item .\library\public\web -Recurse -Force;
+Remove-Item .\library\public\sheet -Recurse -Force;
 
-Set-Location web;
+Set-Location sheet;
 npm run pack;
 Set-Location ..
 
-Copy-Item -Path ".\web\dist" -Destination ".\library\public\web" -Recurse
+Copy-Item -Path ".\sheet\dist" -Destination ".\library\public\sheet" -Recurse
 
 Compress-Archive -Path $contents -DestinationPath $zipFile;
 
