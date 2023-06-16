@@ -1,0 +1,22 @@
+ROLL, WEAPON                     , COST , RANGE   , HEALTH DAMAGE, WOUND DAMAGE, SHOTS, WOUND                   , SPECIAL
+1   , Boarding Axe               , 150  , Adjacent, 2d10 [+]     ,             , N/A  , Gore [+]                , []
+2   , Combat Shotgun             , 1400 , Close   ,              , 1           , 4    , Gunshot                 , ['1d10 DMG at Long Range']
+3   , Crowbar                    , 50   , Adjacent, 1d5          ,             , N/A  , Blunt Force [+]         , []
+4   , Flamethrower               , 2000 , Close   ,              , 1           , 4    , Fire/Explosives [+]     , "['If liquid fuel tank is destroyed, 1 Wound to all Close']"
+5   , Flare Gun                  , 85   , Long    , 1d5          ,             , 2    , Fire/Explosives [-]     , ['High intensity flare visible day and night from Long Range']
+6   , Foam Gun                   , 275  , Close   , 1            ,             , 3    , Blunt Force             , "['Body Save or become stuck','Strength Check [-] to escape']"
+7   , Frag Grenade               , 70   , Long    ,              , 1d5-1       , 1    , Fire/Explosives         , ['All Close must Body Save to avoid']
+8   , Hand Welder                , 250  , Adjacent, 1d10         ,             , N/A  , Bleeding                , ['Can cut through airlock doors']
+9   , General-Purpose Machine Gun, 1800 , Long    , 4d10 [+]     ,             , 5    , Gunshot [+]             , "['Two-handed','Heavy','Barrel can be maneuvered to fire around corners']"
+10  , Laser Cutter               , 1200 , Long    , 1d100        ,             , 6    , Bleeding [+] or Gore [+], "Two-handed. Heavy. Must recharge between shots. Reload: 1hr (power), 6hr (solar)."
+11  , Nail Gun                   , 150  , Close   , 1d5          ,             , 32   , Bleeding                , []
+12  , Pulse Rifle                , 2000 , Long    , 3d10         ,             , 5    , Gunshot                 , ['Pump-action grenade launcher holds x3 frag grenades.']
+13  , Revolver                   , 750  , Close   , 1d10 [+]     ,             , 6    , Gunshot                 , []
+14  , Rigging Gun                , 350  , Close   , 1d10         ,             , 1    , Bleeding [+]            , "['100m microfilament','Body Save or become entangled','2d10 DMG when removed']"
+15  , Scalpel                    , 50   , Adjacent, 1d5          ,             , N/A  , Bleeding [+]            , []
+16  , Smart Rifle                , 12000, Long    , 1d10x10      ,             , 3    , Gunshot [+]             , "['Two-handed','Heavy,'If not braced/prone when firing, Body Save or be knocked down']"
+17  , SMG                        , 1200 , Long    , 2d10         ,             , 4    , Gunshot                 , ['Can be held one-handed']
+18  , Stun Baton                 , 115  , Adjacent, 1d5          ,             , N/A  , Blunt                   , ['Force Body Save or stunned 1 round.]
+19  , Tranq Pistol               , 850  , Close   , 1            ,             , 6    , Blunt Force             , ['If DMG dealt: target must Body Save or be unconscious 1d10 rounds']
+20  , Unnarmed                   , 0    , Adjacent, Strength/10  ,             , N/A  , Blunt Force             , []
+21  , Vibechete                  , 500  , Adjacent, 3d10         ,             , N/A  , Bleeding + Gore         , "['When dealing a Wound, roll on BOTH the Bleeding AND Gore columns']"

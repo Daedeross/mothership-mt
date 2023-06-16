@@ -1,0 +1,23 @@
+WEAPON,COST,RANGE,DAMAGE,SHOTS,WOUND,SPECIAL
+Ammo,50,N/A,N/A,Per magazine/container.
+Boarding Axe,150,Adjacent,2d10 DMG [+],N/A,Gore [+],
+Combat Shotgun,1400,Close,1 Wound,4,Gunshot,1d10 DMG at Long Range.
+Crowbar,50,Adjacent,1d5 DMG,N/A,Blunt Force [+],
+Flamethrower,2000,Close,1 Wound,4,Fire/Explosives [+],"If liquid fuel tank is destroyed, 1 Wound to all Close."
+Flare Gun,85,Long,1d5 DMG,2,Fire/Explosives [-],High intensity flare visible day and night from Long Range.
+Foam Gun,275,Close,1 DMG,3,Blunt Force,Body Save or become stuck. Strength Check [-] to escape.
+Frag Grenade,70,Long,1d5-1 Wounds,1,Fire/Explosives,All Close must Body Save to avoid.
+Hand Welder,250,Adjacent,1d10 DMG,N/A,Bleeding,Can cut through airlock doors.
+General-Purpose Machine Gun,1800,Long,4d10 DMG [+],5,Gunshot [+],Two-handed. Heavy. Barrel can be maneuvered to fire around corners.
+Laser Cutter,1200,Long,1d100 DMG,6,Bleeding [+] or Gore [+],Two-handed. Heavy. Must recharge between shots. Reload: 1hr (power), 6hr (solar).
+Nail Gun,150,Close,1d5 DMG,32,Bleeding,
+Pulse Rifle,2000,Long,3d10 DMG,5,Gunshot,Pump-action grenade launcher holds x3 frag grenades.
+Revolver,750,Close,1d10 DMG [+],6,Gunshot,
+Rigging Gun,350,Close,1d10 DMG + 2d10 DMG when removed,1,Bleeding [+], 100m microfilament. Body Save or become entangled.
+Scalpel,50,Adjacent,1d5 DMG,N/A,Bleeding [+],
+Smart Rifle,12000,Long,1d10x10 DMG,3,Gunshot [+],Two-handed. Heavy. If not braced/prone when firing, Body Save or be knocked down.
+SMG,1200,Long,2d10 DMG,4,Gunshot,Can be held one-handed.
+,Stun Baton,115,Adjacent,1d5 DMG,N/A,Blunt,Force Body Save or stunned 1 round.
+Tranq Pistol,850,Close,1 DMG,6,Blunt Force,If DMG dealt: target must Body Save or be unconscious 1d10 rounds.
+Unnarmed,Free,Adjacent,Str/10 DMG,N/A,Blunt Force,
+Vibechete,500,Adjacent,3d10 DMG,N/A,Bleeding + Gore, When dealing a Wound, roll on BOTH the Bleeding AND Gore columns.
