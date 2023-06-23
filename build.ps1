@@ -14,8 +14,12 @@ Remove-Item .\library\public\sheet -Recurse -Force;
 Set-Location sheet;
 npm run pack;
 Set-Location ..
-
 Copy-Item -Path ".\sheet\dist" -Destination ".\library\public\sheet" -Recurse
+
+Set-Location overlay\roll;
+npm run pack;
+Set-Location ..\..
+Copy-Item -Path ".\overlay\roll\dist" -Destination ".\library\public\overlay\roll" -Recurse
 
 Compress-Archive -Path $contents -DestinationPath $zipFile;
 
