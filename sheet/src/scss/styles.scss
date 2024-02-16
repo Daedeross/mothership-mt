@@ -127,9 +127,9 @@ input.stat::-webkit-inner-spin-button {
     @extend .mx-auto;
 
     aspect-ratio: 1;
-    font-size: 46px;
-    width: 80px;
-    height: 80px;
+    font-size: min(46px, calc(1em + 3.5vw));
+    width: min(80px, 9.5vw);
+    height: min(80px, 9.5vw);
     padding-top: 12px;
 }
 
@@ -137,6 +137,12 @@ input.stat-value {
     @extend .stat;
 
     background-color: white;
+}
+
+.stat-label {
+    @extend .h5;
+
+    font-size: min(1.25rem, 2vw);
 }
 
 .condition-split {
@@ -162,6 +168,7 @@ input.stat-value {
 
 .condition-label {
     font-size: 8pt;
+    text-overflow: clip !important;
 }
 
 input.condition-entry::-webkit-outer-spin-button,

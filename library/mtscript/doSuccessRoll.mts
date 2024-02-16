@@ -10,7 +10,7 @@
     [h: bonus = 0]
 }]
 [h: mode = json.get(macroArgs, "mode")]
-[h: assert(mode == "" || mode == "+" || mode == "-", "mode (arg(2)) must be '', '+', or '-'")]
+[h: assert(mode == "" || mode == "A" || mode == "D", "mode (arg(2)) must be '', 'A', or 'D'")]
 [h: output = json.get(macroArgs, "output")]
 [h, if(json.contains(macroArgs, "id")): id = json.get(macroArgs, "id"); id = currentToken() ]
 [h: target = getProperty(stat, id)]

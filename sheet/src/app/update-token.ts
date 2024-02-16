@@ -21,8 +21,8 @@ export const nonCharacterSlices = [
 export const isStateChanged = (action: Action, currentState: RootState, previousState: RootState) => !isEqual(currentState, previousState);
 export const isCharacterChanged = (action: Action, currentState: RootState, previousState: RootState) => {
     const foo = !(previousState.token.changing || currentState.token.changing)
-    && nonCharacterSlices.reduce((last, current) => last && !startsWith(action.type, current), true)
-    && !isEqual(currentState, previousState);
+                && nonCharacterSlices.reduce((last, current) => last && !startsWith(action.type, current), true)
+                && !isEqual(currentState, previousState);
 
     return foo;
 }

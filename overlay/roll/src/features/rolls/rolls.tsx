@@ -1,5 +1,5 @@
 import { ReactElement, useState } from 'react';
-import DieButton from './die-button/die-button';
+import DieButton from '../die-button/die-button';
 
 function Rolls(): ReactElement {
     const [selected, setSelected] = useState(false);

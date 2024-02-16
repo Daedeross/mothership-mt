@@ -1,5 +1,6 @@
 import { defaultTo } from 'lodash';
-import { ReactElement, useState } from 'react';
+
+import { doSimpleRoll } from '../../app/linker';
 
 interface Props {
     die: string;
@@ -8,7 +9,8 @@ interface Props {
 
 const DieButton: React.FC<Props> = ({ die, label }) => {
     return (
-        <div className='dice-die-button' data-dice={die}>
+        <div className='dice-die-button' data-dice={die}
+            onClick={e => doSimpleRoll(die)}>
             <span className={`dice-icon-die dice-icon-die--${die}`}>
             </span>
             <div className='dice-die-button__tooltip'>

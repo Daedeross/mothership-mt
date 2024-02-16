@@ -1,4 +1,6 @@
-[h, macro("showCharacterSheet@this"): ""]
-[h, macro("showRollOverlay@this"): ""]
+[h: broadcast("mothership-mt executing onInit", "gm")]
 [h: defineFunction("mothership.roll", "successRoll@this")]
 [h: defineFunction("mothership.setProperty", "setTokenProperty@this")]
+[h: defineFunction("rand", "randomInt@this")]
+[h, macro("showCharacterSheet@this"): ""]
+[h, macro("showRollOverlay@this"): ""]

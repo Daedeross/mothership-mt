@@ -1,0 +1,15 @@
+{
+  "contents": [
+    "events.json",
+    "library.json",
+    "license.txt",
+    "mts_properties.json",
+    "readme.md",
+    "library"
+  ],
+  "name": "mothership",
+  "webApps": [
+    "sheet"
+    
+  ]
+}

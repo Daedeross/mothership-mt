@@ -1,8 +1,14 @@
-# MapTool addon package
+# MapTool specific stuff
+.buildlocal
 *.mtlib
+library/public/overlay/
+library/public/dialog/
+library/public/frame/
 
 # built web files
-library/public/web
+library/public/frame/**/*
+library/public/sheet/**/*
+library/public/overlay/**/*
 
 # Logs
 logs

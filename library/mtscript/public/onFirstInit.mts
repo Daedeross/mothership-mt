@@ -1,1 +1,1 @@
-[h: broadcast("add-on in onFirstInit", "gm")]
+[h: broadcast("mothership-mt executing onFirstInit", "gm")]

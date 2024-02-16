@@ -19,8 +19,8 @@ interface Props {
 
 const modeToString = (mode: RollMode) => {
     switch (mode) {
-        case RollMode.Advantage: return "+";
-        case RollMode.Disadvantage: return "-";
+        case RollMode.Advantage: return "A";
+        case RollMode.Disadvantage: return "D";
         default: return "";
     }
 }
@@ -62,7 +62,7 @@ const StatDisplay: React.FC<Props> = ({ label, name }) => {
     return (
         <Stack gap={1} style={{ maxWidth: 100 }}>
             {valueDisplay(rollMode !== RollMode.None)}
-            <div className="text-center align-items-center h5"><span>{displayName}</span></div>
+            <div className="text-center align-items-center stat-label"><span>{displayName}</span></div>
         </Stack>
     );
 };

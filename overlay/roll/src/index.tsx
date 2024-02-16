@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client';
 // import testCharacter2 from '../test/test-character2.json';
 
-import Rolls from './features/rolls';
+import Rolls from './features/rolls/rolls';
 
 // Importing the Bootstrap CSS
 import './resources/styles.scss';

@@ -35,10 +35,10 @@ const ConditionDisplay: React.FC<Props> = ({ name, label = null, reversed = fals
                 <Col xs={1} className="condition-split"></Col>
                 <Col xs={5} className="condition-limit">{reversed ? min : max}</Col>
             </Row>
-            <Row className="condition-label">
-                <Col xs={5}>Current</Col>
+            {/* <Row className="condition-label">
+                <Col xs={5} className="overflow-x-hidden">Current</Col>
                 <Col xs={7}>{reversed ? 'Minimum' : 'Maximum'}</Col>
-            </Row>
+            </Row> */}
         </Container>
     )
 }

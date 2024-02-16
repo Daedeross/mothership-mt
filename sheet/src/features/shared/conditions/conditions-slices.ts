@@ -32,7 +32,7 @@ const conditionValueSliceFactory = (key: string, initialState: ConditionValueSta
             },
             setCurrent: (state: ConditionValueState, action: PayloadAction<KeyedPayload<number>>) => {
                 if (action.payload.key === key) {
-                    if (inRange(action.payload.value, state.min, state.max)) {
+                    if (inRange(action.payload.value, state.min, state.max + 1)) {
                         state.current = action.payload.value;
                     }
                 }
@@ -171,7 +171,7 @@ export const selectConditionsDto = (state: RootState) => {;
         currenthealth: state.conditions.health.current,
         maxhealth: state.conditions.health.max,
         currentwounds: state.conditions.wounds.current,
-        maxwounds: state.conditions.wounds.current,
+        maxwounds: state.conditions.wounds.max,
         currentstress: state.conditions.stress.current,
         minimumstress: state.conditions.stress.min,
         traumaresponse: state.conditions.misc.traumaresponse,
